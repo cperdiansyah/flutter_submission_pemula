@@ -143,7 +143,7 @@ var foodDataList = [
   ),
   FoodData(
     name: "Sate",
-    imagePoster: "images/sate.png",
+    imagePoster: "images/sate.jpg",
     category: "Dishes",
     description:
         "Sate or satai is a food made from meat that is cut into small pieces and stabbed in such a way with a stick of coconut or bamboo leaf bone, then grilled using wood charcoal coals. Satay is served with a variety of spices depending on the variation of the satay recipe.",
@@ -169,6 +169,84 @@ var foodDataList = [
       'https://asset.kompas.com/crops/p88KvOKRwg7WpvHA1bgtYQ2rOQ8=/0x0:698x465/780x390/data/photo/2022/01/10/61dbc4076c2b3.jpg',
       'https://ukm-bumdessukaratu.com/wp-content/uploads/2021/01/Resep-Soto-Ayam-Enak-dan-Mudah.jpg',
       'https://primaberita.com/wp-content/uploads/2020/11/Resep-Soto-Ayam-Khas-Semarang.jpg'
+    ],
+  ),
+];
+
+var popularFoodList = [
+  FoodData(
+    name: "Rendang",
+    imagePoster: "images/rendang.jpg",
+    category: "Dishes",
+    description:
+        "Rendang or randang in the Minangkabau language is a dish made from native Indonesian meat originating from Minangkabau. This dish is produced from a long low temperature cooking process using various spices and coconut milk.",
+    price: 17000.0,
+    discount: 3.0,
+    ratings: 4.9,
+    imageUrls: [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9kNnw7DwmWazfEMynhyqfKhxAyWcXI6kwfoN2Gg9U25LgvJPam9Xyg484w4tIiqSXs2M&usqp=CAU',
+      'https://img.inews.co.id/media/822/files/inews_new/2021/05/10/IMG_10052021_175604__822_x_430_piksel_.jpg',
+      'https://awsimages.detik.net.id/community/media/visual/2021/09/13/rendang.jpeg?w=700&q=90'
+    ],
+  ),
+  FoodData(
+    name: "Sate",
+    imagePoster: "images/sate.jpg",
+    category: "Dishes",
+    description:
+        "Sate or satai is a food made from meat that is cut into small pieces and stabbed in such a way with a stick of coconut or bamboo leaf bone, then grilled using wood charcoal coals. Satay is served with a variety of spices depending on the variation of the satay recipe.",
+    price: 25000.0,
+    discount: 3.0,
+    ratings: 4.6,
+    imageUrls: [
+      'http://kbu-cdn.com/dk/wp-content/uploads/sate-ayam.jpg',
+      'https://i0.wp.com/resepkoki.id/wp-content/uploads/2017/02/Resep-Sate-Ayam-Madura.jpg?fit=1920%2C1804&ssl=1',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/6-C2DHJZJZGLMBTE/hero/f6e6c41bf8eb472489599dae45c781b4_1606745916352654339.jpg'
+    ],
+  ),
+  FoodData(
+    name: "Gudeg",
+    imagePoster: "images/gudeg.png",
+    category: "Dishes",
+    description:
+        "Gudeg is a special dish from Yogyakarta and Central Java Province made from young jackfruit cooked with coconut milk. It takes hours to make this dish. The brown color is usually produced by teak leaves that are cooked together.",
+    price: 10000.0,
+    discount: 20.0,
+    ratings: 4.9,
+    imageUrls: [
+      'https://www.inews.id/index.php/travel/kuliner/resep-gudeg-jogja',
+      'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1644823082/uq7svlxmnxcxcitzjkzn.jpg',
+      'https://www.goodnewsfromindonesia.id/uploads/post/large-gudeg-jogja-7ecc39b5c7920fc37224fe5042ddd276.jpg'
+    ],
+  ),
+  FoodData(
+    name: "Gulai",
+    imagePoster: "images/gulai.jpg",
+    category: "Dishes",
+    description:
+        "Gulai, also known as Gule, is a dish made from chicken meat, various fish, goat, beef, offal, or vegetables such as young jackfruit and cassava leaves, which are processed in a savory spiced sauce.",
+    price: 15000.0,
+    discount: 15.0,
+    ratings: 4.5,
+    imageUrls: [
+      'https://img-global.cpcdn.com/recipes/b17fa1f033770175/751x532cq70/gulai-ayam-foto-resep-utama.jpg',
+      'https://awsimages.detik.net.id/community/media/visual/2021/09/07/resep-gulai-ayam-nanas_43.jpeg?w=1200',
+      'https://www.ruparupa.com/blog/wp-content/uploads/2022/02/resep-gulai-ayam-lezat.jpeg'
+    ],
+  ),
+  FoodData(
+    name: "Nasi Goreng",
+    imagePoster: "images/nasi_goreng.jpg",
+    category: "Dishes",
+    description:
+        "Fried rice is a food in the form of fried rice and stirred in cooking oil, margarine, or butter. Usually, sweet soy sauce, shallots, garlic, tamarind, pepper and other spices are added; such as eggs, chicken, and crackers.",
+    price: 13000.0,
+    discount: 15.0,
+    ratings: 4.7,
+    imageUrls: [
+      'https://asset.kompas.com/crops/riPGK5eD7amHKtv3dFNqioI6IqI=/13x7:700x465/780x390/data/photo/2021/09/24/614dc6865eb24.jpg',
+      'https://cdn-2.tstatic.net/travel/foto/bank/images/kuliner-nasi-goreng-jawa-enak-untuk-menu-sarapan.jpg',
+      'https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2020/10/07/21656846.jpg'
     ],
   ),
 ];
