@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:submission_flutter_pemula/model/category_data.dart';
 import 'package:submission_flutter_pemula/model/food_data.dart';
+import 'package:submission_flutter_pemula/model/category_data.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -54,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'Popular and News',
+                          'Popular and new',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -68,13 +70,87 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Column(children: <Widget>[
-                SizedBox(
-                  height: 180,
-                  child: PopularFoodList(),
-                )
-                //List of food
-              ])
+              Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 110,
+                    child: PopularFoodList(),
+                  )
+                  //List of food
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'Categories',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 40,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        final CategoryData category = categoryList[index];
+                        var icons = category.icons;
+                        return Container(
+                          clipBehavior: Clip.antiAlias,
+                          /*  shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),*/
+                          margin: EdgeInsets.only(right: 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black38, // red as border color
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              print(category.name);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    category.name,
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      itemCount: categoryList.length,
+                    ),
+                  )
+                  //List of food
+                ],
+              ),
             ],
           ),
         ),
@@ -103,8 +179,7 @@ class PopularFoodList extends StatelessWidget {
               onTap: () {
                 print(foodData.name);
               },
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Stack(
                 children: <Widget>[
                   ClipRRect(
                     borderRadius: BorderRadius.only(
@@ -118,23 +193,41 @@ class PopularFoodList extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  Container(
+                    padding: const EdgeInsets.all(5.0),
+                    width: 150,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: <Color>[
+                          Colors.black.withAlpha(0),
+                          Colors.black12,
+                          Colors.black45
+                        ],
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         Text(
                           foodData.name,
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
                         Text(
                           foodData.category,
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w300,
+                            color: Colors.white,
                           ),
                         ),
                       ],
