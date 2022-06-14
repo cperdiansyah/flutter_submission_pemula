@@ -27,7 +27,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Capcai or capcay is the name of a typical Chinese-Indonesian dish in the form of many kinds of vegetables cooked by boiling or frying. Capcai was originally a variation of a typical Fujian dish. The name capcai is taken from the Hokkien dialect which literally means \"various vegetables\".",
-    price: 7000.0,
+    price: 7000,
     discount: 12.0,
     ratings: 4.2,
     imageUrls: [
@@ -42,7 +42,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Gudeg is a special dish from Yogyakarta and Central Java Province made from young jackfruit cooked with coconut milk. It takes hours to make this dish. The brown color is usually produced by teak leaves that are cooked together.",
-    price: 10000.0,
+    price: 10000,
     discount: 20.0,
     ratings: 4.9,
     imageUrls: [
@@ -57,7 +57,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Gulai, also known as Gule, is a dish made from chicken meat, various fish, goat, beef, offal, or vegetables such as young jackfruit and cassava leaves, which are processed in a savory spiced sauce.",
-    price: 15000.0,
+    price: 15000,
     discount: 15.0,
     ratings: 4.5,
     imageUrls: [
@@ -72,7 +72,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Kwetiau is a kind of white Chinese noodles made from rice. Kwetiau is a food that is quite popular in Indonesia, especially in Jakarta and other places where many people of Chinese descent are inhabited. Kwetiau is generally synonymous with ethnic Hokkien Chinese and Tio Ciu",
-    price: 12000.0,
+    price: 12000,
     discount: 15.0,
     ratings: 4.3,
     imageUrls: [
@@ -87,7 +87,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Fried rice is a food in the form of fried rice and stirred in cooking oil, margarine, or butter. Usually, sweet soy sauce, shallots, garlic, tamarind, pepper and other spices are added; such as eggs, chicken, and crackers.",
-    price: 13000.0,
+    price: 13000,
     discount: 15.0,
     ratings: 4.7,
     imageUrls: [
@@ -102,7 +102,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Nasi uduk is a dish made from steamed steamed white rice with coconut milk and seasoned with nutmeg, cinnamon, ginger, lemon grass and pepper. This dish began to be made by residents of the island of Java around 1910-1924 and was popularized by the Dutch East Indies after that.",
-    price: 15000.0,
+    price: 15000,
     discount: 15.0,
     ratings: 4.2,
     imageUrls: [
@@ -117,7 +117,7 @@ var foodDataList = [
     category: "Snacks",
     description:
         "Pempek or empek-empek is a food made from soft ground fish meat mixed with starch or sago flour, as well as a composition of several other ingredients such as eggs, mashed garlic, flavoring, and salt.",
-    price: 10000.0,
+    price: 10000,
     discount: 3.0,
     ratings: 4.3,
     imageUrls: [
@@ -132,7 +132,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Rendang or randang in the Minangkabau language is a dish made from native Indonesian meat originating from Minangkabau. This dish is produced from a long low temperature cooking process using various spices and coconut milk.",
-    price: 17000.0,
+    price: 17000,
     discount: 3.0,
     ratings: 4.9,
     imageUrls: [
@@ -147,7 +147,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Sate or satai is a food made from meat that is cut into small pieces and stabbed in such a way with a stick of coconut or bamboo leaf bone, then grilled using wood charcoal coals. Satay is served with a variety of spices depending on the variation of the satay recipe.",
-    price: 25000.0,
+    price: 25000,
     discount: 3.0,
     ratings: 4.6,
     imageUrls: [
@@ -162,7 +162,7 @@ var foodDataList = [
     category: "Dishes",
     description:
         "Soto ayam is a typical Indonesian food in the form of a kind of chicken soup with a yellowish gravy. The yellow color is due to turmeric which is used as a spice. Soto ayam can be found in many areas in Indonesia and Singapore.",
-    price: 17000.0,
+    price: 17000,
     discount: 3.0,
     ratings: 4.1,
     imageUrls: [

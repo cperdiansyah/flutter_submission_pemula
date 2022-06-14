@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 import 'package:submission_flutter_pemula/model/category_data.dart';
 import 'package:submission_flutter_pemula/model/food_data.dart';
-import 'package:submission_flutter_pemula/model/category_data.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
-                      'images/logo.jpg',
+                      'images/logo.png',
                       width: 70,
                       height: 70,
                       fit: BoxFit.contain,
@@ -56,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'Popular and new',
+                          'Popular Dish',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -94,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                       ],
                     ),
@@ -109,7 +110,6 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         final CategoryData category = categoryList[index];
-                        var icons = category.icons;
                         return Container(
                           clipBehavior: Clip.antiAlias,
                           /*  shape: RoundedRectangleBorder(
@@ -151,6 +151,8 @@ class HomeScreen extends StatelessWidget {
                   //List of food
                 ],
               ),
+              SizedBox(height: 20),
+              Expanded(child: FoodDataListView())
             ],
           ),
         ),
@@ -239,5 +241,81 @@ class PopularFoodList extends StatelessWidget {
           );
         },
         itemCount: popularFoodList.length);
+  }
+}
+
+class FoodDataListView extends StatelessWidget {
+  const FoodDataListView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        final FoodData foodData = foodDataList[index];
+        var formatter = NumberFormat('#,##,000');
+        return Card(
+          clipBehavior: Clip.antiAlias,
+          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: InkWell(
+            onTap: () {
+              print(foodData.name);
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                ClipRRect(
+                  child: Image.asset(
+                    foodData.imagePoster,
+                    width: 150,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 10.0,
+                    bottom: 10.0,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Text(
+                        foodData.name,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        foodData.category,
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Rp. ${formatter.format(foodData.price)}',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+      itemCount: foodDataList.length,
+    );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:submission_flutter_pemula/home_screen.dart';
+import 'package:submission_flutter_pemula/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
