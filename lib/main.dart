@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SplashScreen(),
+      home: HomeScreen(),
+      // home: SplashScreen(),
     );
   }
 }

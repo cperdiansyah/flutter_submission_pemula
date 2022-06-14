@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:submission_flutter_pemula/detail_screen.dart';
 
 import 'package:submission_flutter_pemula/model/category_data.dart';
 import 'package:submission_flutter_pemula/model/food_data.dart';
@@ -170,7 +171,6 @@ class PopularFoodList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final FoodData foodData = popularFoodList[index];
-
           return Card(
             clipBehavior: Clip.antiAlias,
             elevation: 2,
@@ -179,7 +179,14 @@ class PopularFoodList extends StatelessWidget {
             ),
             child: InkWell(
               onTap: () {
-                print(foodData.name);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return DetailScreen(
+                      foodData: foodData,
+                    );
+                  }),
+                );
               },
               child: Stack(
                 children: <Widget>[
@@ -261,7 +268,17 @@ class FoodDataListView extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () {
-              print(foodData.name);
+              // print(foodData.name);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return DetailScreen(
+                      foodData: foodData,
+                    );
+                  },
+                ),
+              );
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
