@@ -46,7 +46,7 @@ var foodDataList = [
     discount: 20.0,
     ratings: 4.9,
     imageUrls: [
-      'https://www.inews.id/index.php/travel/kuliner/resep-gudeg-jogja',
+      'https://cdns.klimg.com/merdeka.com/i/w/news/2020/11/12/1241924/content_images/670x335/20201112171327-1-ilustrasi-gudeg-004-tantri-setyorini.jpg',
       'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1644823082/uq7svlxmnxcxcitzjkzn.jpg',
       'https://www.goodnewsfromindonesia.id/uploads/post/large-gudeg-jogja-7ecc39b5c7920fc37224fe5042ddd276.jpg'
     ],

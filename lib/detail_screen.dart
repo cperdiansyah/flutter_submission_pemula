@@ -95,11 +95,7 @@ class DetailMobilePage extends StatelessWidget {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              IconButton(
-                                icon: Icon(Icons.favorite_border,
-                                    color: Colors.white, size: 30),
-                                onPressed: () {},
-                              ),
+                              FavoriteButton()
                             ],
                           )
                         ],
@@ -150,6 +146,7 @@ class DetailMobilePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               foodData.name,
@@ -211,7 +208,7 @@ class relatedCategory extends StatelessWidget {
 
   const relatedCategory({required category, required this.foodData});
 
-  foodData.removeWhere((foodData) => foodData.removeWhere.category != category);
+  // foodData.removeWhere((foodData) => foodData.removeWhere.category != category);
 
   @override
   Widget build(BuildContext context) {
@@ -229,6 +226,33 @@ class relatedCategory extends StatelessWidget {
           );
         }).toList(),
       ),
+    );
+  }
+}
+
+class FavoriteButton extends StatefulWidget {
+  @override
+  _FavoriteButtonState createState() => _FavoriteButtonState();
+}
+
+class _FavoriteButtonState extends State<FavoriteButton> {
+  bool isFavorite = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        isFavorite ? Icons.favorite : Icons.favorite_border,
+        color: Colors.white,
+        size: 30,
+      ),
+      onPressed: () {
+        setState(
+          () {
+            isFavorite = !isFavorite;
+          },
+        );
+      },
     );
   }
 }
