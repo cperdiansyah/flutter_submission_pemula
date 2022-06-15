@@ -192,39 +192,17 @@ class DetailMobilePage extends StatelessWidget {
                       'Related Dish',
                       style: Theme.of(context).textTheme.headline6,
                     ),
+                    SizedBox(height: 8),
+                    relatedCategory(
+                        category: foodData.category,
+                        currentFood: foodData.name),
+                    SizedBox(height: 16),
                   ],
                 ),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class relatedCategory extends StatelessWidget {
-  final FoodData foodData;
-
-  const relatedCategory({required category, required this.foodData});
-
-  // foodData.removeWhere((foodData) => foodData.removeWhere.category != category);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: foodData.imageUrls.map((url) {
-          return Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.network(url),
-            ),
-          );
-        }).toList(),
       ),
     );
   }
@@ -253,6 +231,106 @@ class _FavoriteButtonState extends State<FavoriteButton> {
           },
         );
       },
+    );
+  }
+}
+
+class relatedCategory extends StatelessWidget {
+  final category;
+  final currentFood;
+  relatedCategory({required this.category, required this.currentFood});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          final FoodData foodData = foodDataList[index];
+
+          if (foodData.category == this.category) {
+            if (foodData.name != this.currentFood) {
+              return Card(
+                clipBehavior: Clip.antiAlias,
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return DetailScreen(
+                          foodData: foodData,
+                        );
+                      }),
+                    );
+                  },
+                  child: Stack(
+                    children: <Widget>[
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
+                        child: Image.asset(foodData.imagePoster,
+                            height: 150, width: 250, fit: BoxFit.cover),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5.0),
+                        width: 250,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: <Color>[
+                              Colors.black.withAlpha(0),
+                              Colors.black12,
+                              Colors.black45
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            Text(
+                              foodData.name,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              foodData.category,
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            } else {
+              return Container();
+            }
+          } else {
+            return Container();
+          }
+        },
+        itemCount: foodDataList.length,
+      ),
     );
   }
 }

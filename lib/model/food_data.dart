@@ -114,7 +114,7 @@ var foodDataList = [
   FoodData(
     name: "Pempek",
     imagePoster: "images/pempek.png",
-    category: "Snacks",
+    category: "Dishes",
     description:
         "Pempek or empek-empek is a food made from soft ground fish meat mixed with starch or sago flour, as well as a composition of several other ingredients such as eggs, mashed garlic, flavoring, and salt.",
     price: 10000,
