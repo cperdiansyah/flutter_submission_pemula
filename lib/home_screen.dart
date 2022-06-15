@@ -115,16 +115,17 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 20),
+
                   Column(
                     children: <Widget>[
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.6,
-                        child: FoodDataListView(),
-                      )
                       //List of food
                     ],
                   ),
                   SizedBox(height: 10),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    child: FoodDataListView(),
+                  )
 
                   // Expanded(child: FoodDataListView())
                 ],
@@ -134,6 +135,15 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class GridFood extends StatelessWidget {
+  const GridFood({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
 
